@@ -1,0 +1,299 @@
+PROBLEM STATEMENT:
+  I need a program for taking cake orders. The program will prompt the user for the cake size, 
+  frosting type, due date, pickup time, and design details. It will calculate the total cost of 
+  each cake and/or order. The program will display the size, frosting type, design details, and 
+  the total cost of the order.
+
+  The available cake sizes are 1/8 sheet, 1/4 sheet, 1/2 sheet, and full sheet. 
+  The frosting choices are buttercream and whipped. The price for each cake size is:
+    1/8 sheet → $19.99
+    1/4 sheet → $24.99
+    1/2 sheet → $39.99
+    Full sheet → $69.99
+  The program will allow the user to place multiple cake orders.
+
+  
+NOUNS: cake size, frosting type, due date, pickup time, design details, price
+
+VERBS: prompt, display, calculate
+
+
+DEFINING DIAGRAM
+
+INPUTS:
+  cakeSize
+  frostingType
+  dueDate
+  pickupTime
+  designDetails
+  price
+
+PROCESSING:
+  prompt user for cakeSize from array
+  validate cakeSize
+  prompt user for frostingType from array
+  validate frostingType
+  prompt user for dueDate
+  validate dueDate
+  prompt user for pickupTime
+  validate pickupTime
+  prompt user for designDetails
+  add cost to grandTotal
+  ask user if there is another order
+
+OUTPUTS:
+  orderDetails
+  grandTotal  
+  
+SOLUTION ALGORITHM:
+
+  var cakeSize = ["1/8th sheet", "1/4 sheet", "1/2 sheet", "Full sheet"]
+  var frostingType = ["Buttercream", "Whipped"]
+  var cakePrice = [19.99, 24.99, 39.99, 69.99]
+  var cakeOrders
+  var grandTotal
+  
+TakeOrder
+var anotherOrder = true
+
+WHILE anotherOrder = true
+  DO
+    Prompt user for cakeSize from array with "Choose a cake size: " + cakeSize array
+    WHILE cakeSize is not in cakeSize array
+      IF cakeSize is not in cakeSize array THEN
+        Alert user with "Invalid cake size! Please choose from the given options."
+    
+  DO
+    Prompt user for frostingType from array with "Choose a frosting type: " + frostingType array
+    WHILE frostingType is not in frostingType array
+      IF frostingType is not in frostingType array THEN
+        Alert user with "Invalid frosting type! Please choose from the given options."
+  DO
+    prompt user for dueDate with "Enter a due date (MM/DD/YYYY): "
+    WHILE dueDate is not in a MM/DD/YYYY format
+      if dueDate is not in MM/DD/YYYY format THEN
+        Alert user with "Invalid date format! Please enter in MM/DD/YYYY format."
+  DO
+    prompt user for dueDate with "Enter pickup time (HH:MM AM/PM): "
+    WHILE pickupTime is not in a HH:MM AM/PM format
+      if pickupTime is not in HH:MM AM/PM format THEN
+        Alert user with "Invalid time format! Please enter in HH:MM AM/PM format."
+        
+  prompt user for designDetails with "Enter design details: "
+  prompt user for another cake order with "Would you like to place another order?
+                                           Click okay to add another order or Cancel to complete the order."
+
+  determine the index of the cakeSize
+  totalCost = match the cake price with the index of the cakeSize
+  
+  add totalCost to grandTotal
+  
+  prompt user to ask for anotherOrder with "Would you like to place another order?"
+ENDWHILE
+
+TakeOrder
+  
+  display "Cake Order Summary:"
+  for each cakeOrders 
+    display "Order " + (Index + 1) + ":"
+    display "Cake Size: " + order.cakeSize
+    display "Frosting Type: " + order.frostingType
+    display "Due Date: " + order.dueDate
+    display "Pickup Time: " + order.pickupTime
+    display "Design Details: " + order.design details
+    display "Cost: " + order.totalCost
+    
+  display grandTotal with "Total Cost for All Orders : $" + grandTotal
+  display "Thank you for your order!"
+  
+  
+  
+ VARIABLES:
+ 
+ TEST CASE 1: 
+
+  INPUT VALUES: 1/8 sheet, Buttercream, 05/24/2025, 6:00 PM, Graduation theme, blue and gold, 
+    write Congratulations Graey
+
+  EXPECTED RESULT: 
+    Cake Order Summary:
+    Order 1:
+    Cake Size: 1/8 sheet
+    Frosting Type: Buttercream
+    Due Date: 05/24/2025
+    Pickup Time: 6:00 PM
+    Design Details: Graduation theme, blue and gold, 
+    write Congratulations Graey
+    Cost: $19.99
+    
+    Total Cost: $19.99
+    Thank you for your order!
+
+  ACTUAL RESULT:
+    Cake Order Summary:
+
+    Order 1:
+
+    Cake Size: 1/8 sheet
+
+    Frosting Type: Buttercream
+
+    Due Date: 05/24/2025
+
+    Pickup Time: 06:00 PM
+
+    Design Details: Graduation theme, blue and gold, write Congratulations Graey
+
+    Cost: $19.99
+    
+    Total Cost for All Orders: $19.99
+
+    Thank you for your order!
+
+ TEST CASE 2: 
+
+  INPUT VALUES: 
+    1/4 sheet, Whipped, 06/02/2025, 04:00 PM, Flowers with Happy Birthday Mom!
+    Full sheet, Whipped, 06/25/2025, 12:30 PM, Scored with rosebud
+
+  EXPECTED RESULT: 
+  
+    Cake Order Summary:
+    Order 1:
+    Cake Size: 1/4 sheet
+    Frosting Type: Whipped
+    Due Date: 06/02/2025
+    Pickup Time: 04:00 PM
+    Design Details: Flowers with Happy Birthday Mom!
+    Cost: $24.99
+    
+    Order 2:
+    Cake Size: Full sheet
+    Frosting Type: Whipped
+    Due Date: 06/25/2025
+    Pickup Time: 12:30 PM
+    Design Details: Scored with rosebud
+    Cost: $69.99
+    
+    Total Cost: $94.98
+    Thank you for your order!
+
+  ACTUAL RESULT:
+    Order 1:
+
+    Cake Size: 1/4 sheet
+
+    Frosting Type: Whipped
+
+    Due Date: 06/02/2025
+
+    Pickup Time: 04:00 PM
+
+    Design Details: Flowers with Happy Birthday Mom!
+
+    Cost: $24.99
+
+    Order 2:
+
+    Cake Size: Full sheet
+
+    Frosting Type: Whipped
+
+    Due Date: 06/25/2025
+
+    Pickup Time: 12:30 PM
+
+    Design Details: Scored with rosebud
+
+    Cost: $69.99
+    Total Cost for All Orders: $94.98
+
+    Thank you for your order!
+  
+  
+   TEST CASE 3: 
+
+  INPUT VALUES: 
+    1/2 sheet, Buttercream, 07/04/2025, 10:00 AM, Birthday
+    Full sheet, Whipped, 07/04/2025, 10:00 AM, Mother's Day theme
+    Full sheet, Buttercream, 12/01/2025, 06:00 AM, Christmas theme
+    
+  EXPECTED RESULT: 
+    Cake Order Summary:
+    Order 1:
+    Cake Size: 1/2 sheet
+    Frosting Type: Buttercream
+    Due Date: 07/04/2025
+    Pickup Time: 10:00 AM
+    Design Details: Birthday
+    Cost: $39.99
+    
+    Order 2:
+    Cake Size: Full sheet
+    Frosting Type: Whipped
+    Due Date: 07/04/2025
+    Pickup Time: 10:00 AM
+    Design Details: Mother's Day theme
+    Cost: $69.99
+    
+    Order 3:
+    Cake Size: Full sheet
+    Frosting Type: Buttercream
+    Due Date: 12/01/2025
+    Pickup Time: 06:00 AM
+    Design Details: Christmas Theme
+    Cost: $69.99
+    
+    Total Cost: $179.97
+    Thank you for your order!
+
+  ACTUAL RESULT:
+
+    Cake Order Summary:
+
+    Order 1:
+
+    Cake Size: 1/2 sheet
+
+    Frosting Type: Buttercream
+
+    Due Date: 07/04/2025
+
+    Pickup Time: 10:00 AM
+
+    Design Details: Birthday
+
+    Cost: $39.99
+
+    Order 2:
+
+    Cake Size: Full sheet
+
+    Frosting Type: Whipped
+
+    Due Date: 07/04/2025
+
+    Pickup Time: 10:00 AM
+
+    Design Details: Mother's Day theme
+
+    Cost: $69.99
+
+    Order 3:
+
+    Cake Size: Full sheet
+
+    Frosting Type: Buttercream
+
+    Due Date: 12/01/2025
+
+    Pickup Time: 06:00 AM
+
+    Design Details: Christmas Theme
+
+    Cost: $69.99
+    Total Cost for All Orders: $179.97
+
+    Thank you for your order!  
+
+  
